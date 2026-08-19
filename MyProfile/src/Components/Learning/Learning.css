@@ -1,0 +1,113 @@
+.learning {
+  width: 100%;
+  padding: 100px 50px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.learning .section-title {
+  margin-bottom: 60px;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  position: relative;
+  min-height: 190px;
+  padding: 28px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-purple);
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  opacity: 0.6;
+}
+
+.skill-card--html::before { background: #e34f26; }
+.skill-card--css::before { background: #1572b6; }
+.skill-card--js::before { background: #f7df1e; }
+.skill-card--react::before { background: #61dafb; }
+.skill-card--git::before { background: #f05032; }
+.skill-card--figma::before { background: #a259ff; }
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--purple-light);
+  box-shadow: 0 8px 30px rgba(147, 51, 234, 0.2);
+}
+
+.skill-icon {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  margin-bottom: 14px;
+}
+
+.skill-card--html .skill-icon { color: #e34f26; }
+.skill-card--css .skill-icon { color: #1572b6; }
+.skill-card--js .skill-icon { color: #f7df1e; }
+.skill-card--react .skill-icon { color: #61dafb; }
+.skill-card--git .skill-icon { color: #f05032; }
+.skill-card--figma .skill-icon { color: #a259ff; }
+
+.skill-card h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.skill-card p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 1024px) {
+  .skills-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .learning {
+    padding: 70px 24px;
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .skill-card {
+    min-height: 160px;
+    padding: 20px 12px;
+  }
+
+  .skill-icon {
+    font-size: 40px;
+    height: 50px;
+  }
+}
