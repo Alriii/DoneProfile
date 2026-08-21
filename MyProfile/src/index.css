@@ -1,95 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Poppins:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
 
-:root {
-  --bg-primary: #050505;
-  --bg-secondary: #0d0b17;
-  --bg-card: rgba(25, 20, 42, 0.6);
-  --purple: #9333ea;
-  --purple-light: #b366ff;
-  --purple-dark: #7a2df8;
-  --text-primary: #ffffff;
-  --text-secondary: #c4bfc9;
-  --text-muted: #aaa4b5;
-  --border-subtle: rgba(255, 255, 255, 0.1);
-  --border-purple: rgba(147, 51, 234, 0.35);
-  --font-handwritten: "Just Me Again Down Here", cursive;
-  --font-body: "Poppins", system-ui, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
+@theme {
+  --font-hand: "Just Me Again Down Here", cursive;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --color-bg: #050505;
+  --color-bg-2: #0d0b17;
+  --color-card: rgba(25, 20, 42, 0.6);
+  --color-fg: #ffffff;
+  --color-purple: #9333ea;
+  --color-purple-light: #b366ff;
+  --color-purple-dark: #7a2df8;
+  --color-muted: #aaa4b5;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+html.light-mode {
+  --color-bg: #f4f1fb;
+  --color-bg-2: #ffffff;
+  --color-card: #ffffff;
+  --color-fg: #1a1228;
+  --color-muted: #5c5668;
+}
+
 body {
   margin: 0;
-  width: 100%;
   min-width: 320px;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body.light-mode {
-  --bg-primary: #f5f5f7;
-  --bg-secondary: #ffffff;
-  --bg-card: rgba(255, 255, 255, 0.9);
-  --text-primary: #1a1a1a;
-  --text-secondary: #444444;
-  --text-muted: #666666;
-  --border-subtle: rgba(0, 0, 0, 0.1);
-}
-
-#root {
-  width: 100%;
-  min-height: 100svh;
-}
-
-p {
-  margin: 0;
-}
-
-.section-title {
-  font-family: var(--font-handwritten);
-  font-size: 52px;
-  font-weight: 400;
-  color: var(--text-primary);
-  margin: 0 0 50px;
-  line-height: 1.1;
-  position: relative;
-  display: inline-block;
-}
-
-.section-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: var(--purple);
-  border-radius: 2px;
-  margin-top: 8px;
-}
-
-.section-title--center {
-  display: block;
-  text-align: center;
-}
-
-.section-title--center::after {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 38px;
-    margin-bottom: 35px;
-  }
 }

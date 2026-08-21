@@ -1,19 +1,24 @@
-import NavBar from "./Components/NavBar/NavBar.tsx";
-import Home from "./Components/Home/Home.tsx";
-import About from "./Components/About/About.tsx";
-import Learning from "./Components/Learning/Learning.tsx";
-import Journey from "./Components/Journey/Journey.tsx";
-import Contact from "./Components/Contact/Contact.tsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { MainLayout } from "@/layouts/MainLayout";
+import HomePage from "@/pages/HomePage";
+import AboutPage from "@/pages/AboutPage";
+import LearningPage from "@/pages/LearningPage";
+import JourneyPage from "@/pages/JourneyPage";
+import ContactPage from "@/pages/ContactPage";
+
 function App() {
   return (
-    <>
-      <NavBar />
-      <Home />
-      <About />
-      <Learning />
-      <Journey />
-      <Contact />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/learning" element={<LearningPage />} />
+          <Route path="/journey" element={<JourneyPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
